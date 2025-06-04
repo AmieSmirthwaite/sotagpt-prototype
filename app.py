@@ -66,4 +66,34 @@ if generate and product_name:
             ]
         }
         requirements = {
-            "Safety": ["Non-toxic silver relea]()
+            "Safety": ["Non-toxic silver release", "Biocompatibility"],
+            "Performance": ["Effective exudate absorption for 72 hours", "Antimicrobial effect verified by lab testing"]
+        }
+        references = [
+            "- [Meta-analysis on silver dressings](https://pubmed.ncbi.nlm.nih.gov/20361810/)",
+            "- [Clinical efficacy review](https://pubmed.ncbi.nlm.nih.gov/17353833/)",
+            "- [FDA Guidance](https://www.fda.gov/media/74063/download)"
+        ]
+
+    st.markdown("### Therapeutic Alternatives")
+    st.write(alternatives)
+
+    st.markdown("### Clinical Outcome Parameters and Acceptance Criteria")
+    st.write(outcomes)
+
+    st.markdown("### Safety and Performance Requirements")
+    st.write(requirements)
+
+    st.markdown("### References")
+    for ref in references:
+        st.markdown(ref)
+
+    st.markdown("---")
+    st.markdown("### Ask a Follow-up Question")
+    user_query = st.text_input("What would you like to refine or ask about this output?")
+    if user_query:
+        st.markdown(f"*You asked:* {user_query}")
+        st.info("(This is a placeholder — in a future version, this would trigger a real-time response or refinement based on your query.)")
+
+elif generate:
+    st.warning("Please provide at least the Device Name or Product Type.")
