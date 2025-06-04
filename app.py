@@ -47,4 +47,5 @@ if generate and product_name:
         "Performance": ["Effective exudate absorption for 72 hours", "Antimicrobial effect verified by lab testing"]
     })
 
-    st.markdown("### References"
+    st.markdown("### References")
+    st.markdown("- [Meta-analysis on silver dressings](https://pubmed.)
