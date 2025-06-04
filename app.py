@@ -1,18 +1,23 @@
 import streamlit as st
 
+st.set_page_config(page_title="SotaGPT: Clinical Intelligence Tool", layout="centered")
+
 st.title("SotaGPT: Medical Device Intelligence Tool")
 
-st.sidebar.header("Enter Device Details")
+st.markdown("### Start with Basic Details")
 
-device_name = st.sidebar.text_input("Device Name")
-intended_purpose = st.sidebar.text_area("Intended Purpose")
-therapeutic_target = st.sidebar.text_input("Therapeutic Target")
-treatment_indication = st.sidebar.text_input("Treatment Indication")
-patient_population = st.sidebar.text_input("Patient Population")
-disease_severity = st.sidebar.text_input("Disease Severity or Stage")
+product_name = st.text_input("Device Name or Product Type")
+intended_purpose = st.text_area("Intended Purpose")
 
-if st.sidebar.button("Generate Clinical Intelligence Report"):
-    st.subheader(f"Report for {device_name}")
+# Expandable refinement section
+with st.expander("Optional: Refine by Clinical Context"):
+    therapeutic_target = st.text_input("Therapeutic Target")
+    treatment_indication = st.text_input("Treatment Indication")
+    patient_population = st.text_input("Patient Population")
+    disease_severity = st.text_input("Disease Severity or Stage")
+
+if st.button("Generate Clinical Intelligence Report") and product_name and intended_purpose:
+    st.subheader(f"Report for {product_name}")
 
     st.markdown("### Therapeutic Alternatives")
     st.write([
@@ -34,7 +39,4 @@ if st.sidebar.button("Generate Clinical Intelligence Report"):
         "Performance": ["Effective exudate absorption", "Antimicrobial effect"]
     })
 
-    st.markdown("### References")
-    st.markdown("- [Meta-analysis on silver dressings](https://pubmed.ncbi.nlm.nih.gov/20361810/)")
-    st.markdown("- [Clinical efficacy review](https://pubmed.ncbi.nlm.nih.gov/17353833/)")
-    st.markdown("- [FDA Guidance](https://www.fda.gov/media/74063/download)")
+    st.markdown(
