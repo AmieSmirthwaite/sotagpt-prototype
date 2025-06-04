@@ -7,10 +7,10 @@ st.title("SotaGPT: Medical Device Intelligence Tool")
 st.markdown("### Start with Basic Details")
 
 product_name = st.text_input("Device Name or Product Type")
-intended_purpose = st.text_area("Intended Purpose")
 
 # Expandable refinement section
 with st.expander("Optional: Refine by Clinical Context"):
+    intended_purpose = st.text_area("Intended Purpose")
     therapeutic_target = st.text_input("Therapeutic Target")
     treatment_indication = st.text_input("Treatment Indication")
     patient_population = st.text_input("Patient Population")
@@ -18,7 +18,7 @@ with st.expander("Optional: Refine by Clinical Context"):
 
 generate = st.button("Generate Clinical Intelligence Report")
 
-if generate and product_name and intended_purpose:
+if generate and product_name:
     st.subheader(f"Report for {product_name}")
 
     st.markdown("### Therapeutic Alternatives")
@@ -29,22 +29,4 @@ if generate and product_name and intended_purpose:
         "Negative pressure wound therapy"
     ])
 
-    st.markdown("### Clinical Outcome Parameters")
-    st.write({
-        "Primary": ["Reduction in wound size", "Resolution of infection"],
-        "Secondary": ["Pain reduction", "Less frequent dressing changes"]
-    })
-
-    st.markdown("### Safety and Performance Requirements")
-    st.write({
-        "Safety": ["Non-toxic silver release", "Biocompatibility"],
-        "Performance": ["Effective exudate absorption", "Antimicrobial effect"]
-    })
-
-    st.markdown("### References")
-    st.markdown("- [Meta-analysis on silver dressings](https://pubmed.ncbi.nlm.nih.gov/20361810/)")
-    st.markdown("- [Clinical efficacy review](https://pubmed.ncbi.nlm.nih.gov/17353833/)")
-    st.markdown("- [FDA Guidance](https://www.fda.gov/media/74063/download)")
-
-elif generate:
-    st.warning("Please provide at least the Device Name or Product Type and Intended Purpose.")
+    st.markdown("### Clinical Outcome Parameters
