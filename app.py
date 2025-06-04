@@ -48,4 +48,16 @@ if generate and product_name:
     })
 
     st.markdown("### References")
-    st.markdown("- [Meta-analysis on silver dressings](https://pubmed.)
+    st.markdown("- [Meta-analysis on silver dressings](https://pubmed.ncbi.nlm.nih.gov/20361810/)")
+    st.markdown("- [Clinical efficacy review](https://pubmed.ncbi.nlm.nih.gov/17353833/)")
+    st.markdown("- [FDA Guidance](https://www.fda.gov/media/74063/download)")
+
+    st.markdown("---")
+    st.markdown("### Ask a Follow-up Question")
+    user_query = st.text_input("What would you like to refine or ask about this output?")
+    if user_query:
+        st.markdown(f"*You asked:* {user_query}")
+        st.info("(This is a placeholder — in a future version, this would trigger a real-time response or refinement based on your query.)")
+
+elif generate:
+    st.warning("Please provide at least the Device Name or Product Type.")
