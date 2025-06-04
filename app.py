@@ -16,7 +16,9 @@ with st.expander("Optional: Refine by Clinical Context"):
     patient_population = st.text_input("Patient Population")
     disease_severity = st.text_input("Disease Severity or Stage")
 
-if st.button("Generate Clinical Intelligence Report") and product_name and intended_purpose:
+generate = st.button("Generate Clinical Intelligence Report")
+
+if generate and product_name and intended_purpose:
     st.subheader(f"Report for {product_name}")
 
     st.markdown("### Therapeutic Alternatives")
@@ -39,4 +41,10 @@ if st.button("Generate Clinical Intelligence Report") and product_name and inten
         "Performance": ["Effective exudate absorption", "Antimicrobial effect"]
     })
 
-    st.markdown(
+    st.markdown("### References")
+    st.markdown("- [Meta-analysis on silver dressings](https://pubmed.ncbi.nlm.nih.gov/20361810/)")
+    st.markdown("- [Clinical efficacy review](https://pubmed.ncbi.nlm.nih.gov/17353833/)")
+    st.markdown("- [FDA Guidance](https://www.fda.gov/media/74063/download)")
+
+elif generate:
+    st.warning("Please provide at least the Device Name or Product Type and Intended Purpose.")
