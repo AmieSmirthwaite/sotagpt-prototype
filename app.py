@@ -29,4 +29,22 @@ if generate and product_name:
         "Negative pressure wound therapy"
     ])
 
-    st.markdown("### Clinical Outcome Parameters
+    st.markdown("### Clinical Outcome Parameters and Acceptance Criteria")
+    st.write({
+        "Primary": [
+            "Reduction in wound size (>50% reduction in 4 weeks)",
+            "Resolution of infection (no signs of local infection in 2 weeks)"
+        ],
+        "Secondary": [
+            "Pain reduction (VAS score improvement >2 points)",
+            "Reduced dressing changes (from daily to every 3 days)"
+        ]
+    })
+
+    st.markdown("### Safety and Performance Requirements")
+    st.write({
+        "Safety": ["Non-toxic silver release", "Biocompatibility"],
+        "Performance": ["Effective exudate absorption for 72 hours", "Antimicrobial effect verified by lab testing"]
+    })
+
+    st.markdown("### References"
